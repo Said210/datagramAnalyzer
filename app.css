@@ -1,0 +1,187 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	background-color: #74b9ff;
+	overflow: hidden;
+}
+.header{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 5rem;
+	background-color: #0984e3;
+}
+#title{
+	font-size: 5rem;
+	position: absolute;
+	bottom: -6px;
+	color: #74b9ff;
+	text-align: center;
+	font-family: "Roboto";
+	font-weight: bolder;
+	width: 100%;
+	height: 5rem;
+}
+#scroll{
+	position: absolute;
+	width: 95%;
+	height: 5rem;
+	background-color: #fff;
+	bottom: 0px;
+	left: 2.5%;
+	box-shadow: 4px 4px 10px rgba(51, 51, 51, 0.25);
+	text-align: center;
+	padding: 1rem;
+	transition: all .5s;
+}
+#scroll-icon{
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 100%;
+	background-color: #fff;
+	padding: .5rem;
+	cursor: pointer;
+	transition: all .2s;
+}
+#scroll-icon:hover{
+	box-shadow: 2px 2px 5px #999;
+}
+#scroll-icon img{width: 100%;}
+.active-scroll{
+	height: 90vh !important;
+	bottom: 0vh !important;
+}
+.card{
+	position: absolute;
+	width: 80vw;
+	min-height: 50vh;
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 2px 2px 5px #999;
+	padding: 1rem;
+	font-family: "Roboto";
+	top: 25vh;
+	right: -70vw;
+	left: 92vw;
+	display: none;
+	opacity: 0;
+	transform: none;
+	transition: all .9s;
+}
+.card .title{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 1.8rem;
+}
+.card .datagram{text-align: justify;}
+.current_card{
+	display: block;
+	left: 10vw;
+	right: 10vw;
+	opacity: 1;
+}
+.prev_card{
+	display: block;
+	left: -70vw;
+	right: 92vw;
+	opacity: 1;
+	filter: blur(1px);
+	transform: scale(0.9);
+	cursor: pointer;
+}
+.next_card{
+	display: block;
+	right: -70vw;
+	left: 92vw;
+	opacity: 1;
+	filter: blur(1px);	
+	transform: scale(0.9);
+	cursor: pointer;
+}
+.min-info{
+	position: absolute;
+	bottom: 1rem;
+	text-align: left;
+}
+.min-info .title{font-size: 1.4rem; text-align: left;}
+.packet-info{
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	width: 50%;
+	text-align: left;
+}
+.packet-info .title{font-size: 1.4rem; text-align: left;}
+#scroll #input, #scroll input[type=button]{display: none;}
+
+.active-scroll input[type=button]{
+	display: block !important;
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 1rem;
+	height: 3rem;
+	outline: none;
+	border: 0px solid;
+	background-color: #1abc9c;
+	cursor: pointer;
+	color: #FFF;
+	font-family: "Roboto";
+	font-weight: lighter;
+	font-size: 1.3rem;
+}
+.active-scroll #input{
+	display: block !important;
+	width: 85%;
+	max-width: 85%;
+	outline: none;
+	border: 0px solid;
+	box-shadow: 0px 5px 10px #aaa;
+	margin-left: 7.5%;
+	padding: 1rem;
+	height: 70%;
+	max-height: 80%;
+}
+
+.info-button{
+	position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.card .hidden-data{
+	display: none;
+	position: absolute;
+	width: 90%;	
+	margin-top: 4rem;
+	display: inline-block;
+	margin-left: 5%;
+	transition: all .3s;
+}
+.card .hidden-data .title{
+	text-align: left !important;
+}
+
+
+.card .data{ display: block; margin-top: 0px; transition: all .3s;}
+
+.flipped-card .hidden-data{display: block; margin-top: 1rem;}
+
+.flipped-card .data{display: none; margin-top: 2rem;}
+
+.half{
+	width: 49%;
+	opacity: 0;
+	height: auto;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	transition: all .3s;
+}
+
+.flipped-card .half{opacity: 1;}

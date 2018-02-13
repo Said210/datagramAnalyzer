@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Analizador</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#F2C94C">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mukta:800|Roboto:300,400" rel="stylesheet">
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+	<div class="header">
+		<div id="title">WEB ANALYZER</div>
+	</div>
+	
+	<div id="cards">
+
+		<div class="card" v-for="(data, index) in datagrams" v-bind:id="'c-' + index">
+			<div class="info-button" v-bind:onclick="'toggle_card(' + index + ')'"><i class="material-icons">info_outline</i></div>
+			<div class="title">#{{index}} | {{data.type}}</div>
+			<div class="hidden-data">
+				<ethernet-header v-bind:header="data.ethernet" class="half"></ethernet-header>
+				<div class="half" v-html="data.render_data()"></div>
+			</div>
+			<div class="data">
+				<div class="datagram">{{data.render_datagram()}}</div>
+				<ethernet-header v-bind:header="data.ethernet" class="min-info"></ethernet-header>
+				<!-- <div class="packet-info" v-html="data.render_data()"></div> -->
+			</div>
+		</div>
+
+	</div>
+
+	<div id="scroll">
+		<div id="scroll-icon"><img id="micon" src="scroll.png" alt=""></div>
+		<textarea placeholer="Tus tramas aquí..." id="input" cols="30" rows="10"></textarea>
+		<input type="button" value="Leer tramas" onclick="decode_input()">
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="data.js"></script>
+	<script src="utilities.js"></script>
+	<script src="ip.js"></script>
+	<script src="analizer.js"></script>
+	<script src="analizer_LLC.js"></script>
+
+	<script src="app.js"></script>
+
+</body>
+</html>
