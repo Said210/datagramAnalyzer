@@ -3,10 +3,11 @@ var utilities = {
 		formater (datagrama:array, from:int, to:int, glue:string)
 		regresa un string con un formato mas agradable a las personas
 	*/
-	formater: function(d, from, to, glue){
+	formater: function(d, from, to, glue, hex){
 		var formated = "";
+		var hex = (hex != undefined && hex) ? "0x" : "";
 		for (var i = from; i < to; i++) {
-			formated += c.dec2hex(d[i]);
+			formated += hex + this.complete(c.dec2hex(d[i]),2);
 			if(i != to-1) formated += glue;
 		};
 		return formated;

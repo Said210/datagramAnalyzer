@@ -141,7 +141,7 @@ function trame(packet){
 
 
 	this.render_datagram = function(){
-		return utilities.formater(this.datagram, 0, this.datagram.length, ", ");
+		return utilities.formater(this.datagram, 0, this.datagram.length, ", ", true);
 	};
 
 	this.render_data = function(){
